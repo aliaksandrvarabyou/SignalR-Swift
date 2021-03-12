@@ -26,6 +26,10 @@ public class WebSocketTransport: HttpTransport, WebSocketDelegate {
     override public var supportsKeepAlive: Bool {
         return true
     }
+    
+    override public init() {
+        // Do nothing. Just to have public init accessed from external module.
+    }
 
     override public func negotiate(connection: ConnectionProtocol, connectionData: String?, completionHandler: ((NegotiationResponse?, Error?) -> ())?) {
         super.negotiate(connection: connection, connectionData: connectionData, completionHandler: completionHandler)
